@@ -1,0 +1,129 @@
+file 5106 1750777614                                            
+version 3
+run LADS-30s-0-20250624-18:06:44-33956
+attr configname LADS-30s
+attr datetime 20250624-18:06:44
+attr datetimef 20250624-180644
+attr experiment LADS-30s
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsd ""
+attr iterationvarsf ""
+attr measurement ""
+attr network CombinedNetwork
+attr processid 33956
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+config image-path ../inet4.5/images
+config *.monitor.samplePeriod 30s
+config *.monitor.trainingPeriod 0s
+config *.monitor.threshold 1.5
+config *.collector.collectionWindow 30s
+config *.attacker*.startTime 450s
+config *.attacker*.burstDuration 150s
+config network CombinedNetwork
+config sim-time-limit 600s
+config **.arp.typename GlobalArp
+config *.configurator.assignAddresses true
+config *.configurator.configureRoutingTable true
+config *.configurator.dumpAddresses true
+config *.configurator.dumpLinks true
+config *.configurator.dumpTopology true
+config *.configurator.dumpRoutes true
+config *.configurator.logLevel debug
+config *.server.numEthInterfaces 1
+config *.server.numApps 1
+config *.server.app[0].typename inet.applications.udpapp.UdpEchoApp
+config *.server.app[0].localPort 80
+config *.server.app[0].replyDelay 0s
+config *.server.app[0].recordScalar true
+config *.server.app[0].recordVector true
+config *.monitor.initialRate 15000
+config *.monitor.enabled true
+config *.monitor.recordVector true
+config *.monitor.recordScalar true
+config *.monitor.snmpTrigger.record vector
+config *.monitor.sampleRate.record vector
+config *.monitor.outToFlowCollector.record vector
+config *.monitor.trainingPeriod 900s
+config *.monitor.samplePeriod 1s
+config *.monitor.floorFactor 1.05
+config *.collector.enabled true
+config *.collector.maxFlows 10000
+config *.collector.recordVector true
+config *.collector.flowsExported.record vector
+config *.collector.collectionWindow 1s
+config *.analyzer.enabled true
+config *.analyzer.topN 5
+config *.analyzer.recordVector true
+config *.analyzer.attackFlow.record vector
+config *.attacker*.typename CustomBurstSender
+config *.attacker*.sleepDuration 10000s
+config *.attacker*.sendInterval exponential(0.0016s)
+config *.goodClient.typename CustomBurstSender
+config *.goodClient.startTime 0s
+config *.goodClient.burstDuration 600s
+config *.goodClient.sleepDuration 0s
+config *.goodClient.sendInterval "uniform(0.0004s, 0.0016s)"
+
+vector 0 CombinedNetwork.monitor snmpTrigger:vector ETV
+attr recordingmode vector
+attr source snmpTrigger
+attr title "SNMP trigger times"
+vector 1 CombinedNetwork.monitor sampleRate:vector ETV
+attr recordingmode vector
+attr source sampleRate
+attr title "Per-second packet samples"
+vector 2 CombinedNetwork.collector flowsExported:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source flowsExported
+attr title "FlowRecords emitted"
+vector 3 CombinedNetwork.collector port0_countVec:vector ETV
+attr recordingmode vector
+attr source port0_countVec
+attr title "Port0 Count per Window"
+vector 4 CombinedNetwork.collector port1_countVec:vector ETV
+attr recordingmode vector
+attr source port1_countVec
+attr title "Port1 Count per Window"
+vector 5 CombinedNetwork.collector port2_countVec:vector ETV
+attr recordingmode vector
+attr source port2_countVec
+attr title "Port2 Count per Window"
+vector 6 CombinedNetwork.collector port3_countVec:vector ETV
+attr recordingmode vector
+attr source port3_countVec
+attr title "Port3 Count per Window"
+vector 7 CombinedNetwork.collector port4_countVec:vector ETV
+attr recordingmode vector
+attr source port4_countVec
+attr title "Port4 Count per Window"
+vector 8 CombinedNetwork.collector port5_countVec:vector ETV
+attr recordingmode vector
+attr source port5_countVec
+attr title "Port5 Count per Window"
+vector 9 CombinedNetwork.collector port6_countVec:vector ETV
+attr recordingmode vector
+attr source port6_countVec
+attr title "Port6 Count per Window"
+vector 10 CombinedNetwork.analyzer attackFlow:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source attackFlow
+attr title "Identified Attack Flows"
+0	4138 19 2774130 2774130 480 480 1 480 480 480 230400
+1	4157 413 142331 4792099 30 600 20 28466 127823 886616 64070049758
+2	4570 68 3413239 4792100 510 600 4 2 7 18 106
+3	4638 42 3413239 4052354 510 540 2 23559 47118 70677 2775132405
+4	4680 42 3413239 4052354 510 540 2 20867 41733 62600 2177074978
+5	4722 42 3413239 4052354 510 540 2 14930 29858 44788 1114405064
+6	4764 42 3413239 4052354 510 540 2 10083 20166 30249 508334445
+7	4806 42 3413239 4052354 510 540 2 20310 40618 60928 2062318024
+8	4848 81 3413239 4792100 510 600 4 9607 19216 48039 646176433
+9	4929 85 3413239 4792100 510 600 4 28466 483935 569335 236624137559
+10	5014 90 4052355 4052355 540 540 5 0 4 10 30
+

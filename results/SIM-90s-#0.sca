@@ -1,0 +1,431 @@
+version 3
+run SIM-90s-0-20250624-18:06:21-33956
+attr configname SIM-90s
+attr datetime 20250624-18:06:21
+attr datetimef 20250624-180621
+attr experiment SIM-90s
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsd ""
+attr iterationvarsf ""
+attr measurement ""
+attr network CombinedNetwork
+attr processid 33956
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+config image-path ../inet4.5/images
+config sim-time-limit 90s
+config *.monitor.samplePeriod 15s
+config *.monitor.trainingPeriod 0s
+config *.monitor.threshold 1.5
+config *.collector.collectionWindow 15s
+config *.attacker*.startTime 31s
+config *.attacker*.burstDuration 59s
+config *.goodClient.burstDuration 600s
+config network CombinedNetwork
+config sim-time-limit 600s
+config **.arp.typename GlobalArp
+config *.configurator.assignAddresses true
+config *.configurator.configureRoutingTable true
+config *.configurator.dumpAddresses true
+config *.configurator.dumpLinks true
+config *.configurator.dumpTopology true
+config *.configurator.dumpRoutes true
+config *.configurator.logLevel debug
+config *.server.numEthInterfaces 1
+config *.server.numApps 1
+config *.server.app[0].typename inet.applications.udpapp.UdpEchoApp
+config *.server.app[0].localPort 80
+config *.server.app[0].replyDelay 0s
+config *.server.app[0].recordScalar true
+config *.server.app[0].recordVector true
+config *.monitor.initialRate 15000
+config *.monitor.enabled true
+config *.monitor.recordVector true
+config *.monitor.recordScalar true
+config *.monitor.snmpTrigger.record vector
+config *.monitor.sampleRate.record vector
+config *.monitor.outToFlowCollector.record vector
+config *.monitor.trainingPeriod 900s
+config *.monitor.samplePeriod 1s
+config *.monitor.floorFactor 1.05
+config *.collector.enabled true
+config *.collector.maxFlows 10000
+config *.collector.recordVector true
+config *.collector.flowsExported.record vector
+config *.collector.collectionWindow 1s
+config *.analyzer.enabled true
+config *.analyzer.topN 5
+config *.analyzer.recordVector true
+config *.analyzer.attackFlow.record vector
+config *.attacker*.typename CustomBurstSender
+config *.attacker*.sleepDuration 10000s
+config *.attacker*.sendInterval exponential(0.0016s)
+config *.goodClient.typename CustomBurstSender
+config *.goodClient.startTime 0s
+config *.goodClient.burstDuration 600s
+config *.goodClient.sleepDuration 0s
+config *.goodClient.sendInterval "uniform(0.0004s, 0.0016s)"
+
+scalar CombinedNetwork.monitor firstSNMPtrigger 45
+scalar CombinedNetwork.collector Port0_count 22773
+scalar CombinedNetwork.collector Port1_count 20171
+scalar CombinedNetwork.collector Port2_count 14432
+scalar CombinedNetwork.collector Port3_count 9747
+scalar CombinedNetwork.collector Port4_count 19632
+scalar CombinedNetwork.collector Port5_count 9288
+scalar CombinedNetwork.collector Port6_count 56933
+scalar CombinedNetwork.collector Port0_count 22773
+scalar CombinedNetwork.collector Port1_count 20171
+scalar CombinedNetwork.collector Port2_count 14432
+scalar CombinedNetwork.collector Port3_count 9747
+scalar CombinedNetwork.collector Port4_count 19632
+scalar CombinedNetwork.collector Port5_count 9288
+scalar CombinedNetwork.collector Port6_count 56933
+scalar CombinedNetwork.collector Port0_count 11780
+scalar CombinedNetwork.collector Port1_count 10433
+scalar CombinedNetwork.collector Port2_count 7464
+scalar CombinedNetwork.collector Port3_count 5041
+scalar CombinedNetwork.collector Port4_count 10155
+scalar CombinedNetwork.collector Port5_count 4804
+scalar CombinedNetwork.collector Port6_count 14234
+scalar CombinedNetwork.collector Port0_count 11780
+scalar CombinedNetwork.collector Port1_count 10433
+scalar CombinedNetwork.collector Port2_count 7464
+scalar CombinedNetwork.collector Port3_count 5041
+scalar CombinedNetwork.collector Port4_count 10155
+scalar CombinedNetwork.collector Port5_count 4804
+scalar CombinedNetwork.collector Port6_count 14234
+scalar CombinedNetwork.collector Port2_count 7465
+scalar CombinedNetwork.collector Port3_count 5042
+scalar CombinedNetwork.collector Port5_count 4803
+scalar CombinedNetwork.collector Port6_count 14233
+scalar CombinedNetwork.collector Port2_count 7465
+scalar CombinedNetwork.collector Port3_count 5042
+scalar CombinedNetwork.collector Port5_count 4803
+scalar CombinedNetwork.collector Port6_count 14233
+par CombinedNetwork.attacker1.ethg$o.channel typename "\"Link\""
+par CombinedNetwork.attacker1.ethg$o.channel disabled false
+attr mutable ""
+par CombinedNetwork.attacker1.ethg$o.channel delay 0.001s
+attr mutable ""
+attr unit s
+par CombinedNetwork.attacker1.ethg$o.channel datarate 1e+08bps
+attr mutable ""
+attr unit bps
+par CombinedNetwork.attacker1.ethg$o.channel ber 0
+attr mutable ""
+par CombinedNetwork.attacker1.ethg$o.channel per 0
+attr mutable ""
+par CombinedNetwork.coreRouter.ethg$o[0].channel typename "\"Link\""
+par CombinedNetwork.coreRouter.ethg$o[0].channel disabled false
+attr mutable ""
+par CombinedNetwork.coreRouter.ethg$o[0].channel delay 0.001s
+attr mutable ""
+attr unit s
+par CombinedNetwork.coreRouter.ethg$o[0].channel datarate 1e+08bps
+attr mutable ""
+attr unit bps
+par CombinedNetwork.coreRouter.ethg$o[0].channel ber 0
+attr mutable ""
+par CombinedNetwork.coreRouter.ethg$o[0].channel per 0
+attr mutable ""
+par CombinedNetwork.attacker2.ethg$o.channel typename "\"Link\""
+par CombinedNetwork.attacker2.ethg$o.channel disabled false
+attr mutable ""
+par CombinedNetwork.attacker2.ethg$o.channel delay 0.001s
+attr mutable ""
+attr unit s
+par CombinedNetwork.attacker2.ethg$o.channel datarate 1e+08bps
+attr mutable ""
+attr unit bps
+par CombinedNetwork.attacker2.ethg$o.channel ber 0
+attr mutable ""
+par CombinedNetwork.attacker2.ethg$o.channel per 0
+attr mutable ""
+par CombinedNetwork.coreRouter.ethg$o[1].channel typename "\"Link\""
+par CombinedNetwork.coreRouter.ethg$o[1].channel disabled false
+attr mutable ""
+par CombinedNetwork.coreRouter.ethg$o[1].channel delay 0.001s
+attr mutable ""
+attr unit s
+par CombinedNetwork.coreRouter.ethg$o[1].channel datarate 1e+08bps
+attr mutable ""
+attr unit bps
+par CombinedNetwork.coreRouter.ethg$o[1].channel ber 0
+attr mutable ""
+par CombinedNetwork.coreRouter.ethg$o[1].channel per 0
+attr mutable ""
+par CombinedNetwork.attacker3.ethg$o.channel typename "\"Link\""
+par CombinedNetwork.attacker3.ethg$o.channel disabled false
+attr mutable ""
+par CombinedNetwork.attacker3.ethg$o.channel delay 0.001s
+attr mutable ""
+attr unit s
+par CombinedNetwork.attacker3.ethg$o.channel datarate 1e+08bps
+attr mutable ""
+attr unit bps
+par CombinedNetwork.attacker3.ethg$o.channel ber 0
+attr mutable ""
+par CombinedNetwork.attacker3.ethg$o.channel per 0
+attr mutable ""
+par CombinedNetwork.coreRouter.ethg$o[2].channel typename "\"Link\""
+par CombinedNetwork.coreRouter.ethg$o[2].channel disabled false
+attr mutable ""
+par CombinedNetwork.coreRouter.ethg$o[2].channel delay 0.001s
+attr mutable ""
+attr unit s
+par CombinedNetwork.coreRouter.ethg$o[2].channel datarate 1e+08bps
+attr mutable ""
+attr unit bps
+par CombinedNetwork.coreRouter.ethg$o[2].channel ber 0
+attr mutable ""
+par CombinedNetwork.coreRouter.ethg$o[2].channel per 0
+attr mutable ""
+par CombinedNetwork.attacker4.ethg$o.channel typename "\"Link\""
+par CombinedNetwork.attacker4.ethg$o.channel disabled false
+attr mutable ""
+par CombinedNetwork.attacker4.ethg$o.channel delay 0.001s
+attr mutable ""
+attr unit s
+par CombinedNetwork.attacker4.ethg$o.channel datarate 1e+08bps
+attr mutable ""
+attr unit bps
+par CombinedNetwork.attacker4.ethg$o.channel ber 0
+attr mutable ""
+par CombinedNetwork.attacker4.ethg$o.channel per 0
+attr mutable ""
+par CombinedNetwork.coreRouter.ethg$o[3].channel typename "\"Link\""
+par CombinedNetwork.coreRouter.ethg$o[3].channel disabled false
+attr mutable ""
+par CombinedNetwork.coreRouter.ethg$o[3].channel delay 0.001s
+attr mutable ""
+attr unit s
+par CombinedNetwork.coreRouter.ethg$o[3].channel datarate 1e+08bps
+attr mutable ""
+attr unit bps
+par CombinedNetwork.coreRouter.ethg$o[3].channel ber 0
+attr mutable ""
+par CombinedNetwork.coreRouter.ethg$o[3].channel per 0
+attr mutable ""
+par CombinedNetwork.attacker5.ethg$o.channel typename "\"Link\""
+par CombinedNetwork.attacker5.ethg$o.channel disabled false
+attr mutable ""
+par CombinedNetwork.attacker5.ethg$o.channel delay 0.001s
+attr mutable ""
+attr unit s
+par CombinedNetwork.attacker5.ethg$o.channel datarate 1e+08bps
+attr mutable ""
+attr unit bps
+par CombinedNetwork.attacker5.ethg$o.channel ber 0
+attr mutable ""
+par CombinedNetwork.attacker5.ethg$o.channel per 0
+attr mutable ""
+par CombinedNetwork.coreRouter.ethg$o[4].channel typename "\"Link\""
+par CombinedNetwork.coreRouter.ethg$o[4].channel disabled false
+attr mutable ""
+par CombinedNetwork.coreRouter.ethg$o[4].channel delay 0.001s
+attr mutable ""
+attr unit s
+par CombinedNetwork.coreRouter.ethg$o[4].channel datarate 1e+08bps
+attr mutable ""
+attr unit bps
+par CombinedNetwork.coreRouter.ethg$o[4].channel ber 0
+attr mutable ""
+par CombinedNetwork.coreRouter.ethg$o[4].channel per 0
+attr mutable ""
+par CombinedNetwork.attacker6.ethg$o.channel typename "\"Link\""
+par CombinedNetwork.attacker6.ethg$o.channel disabled false
+attr mutable ""
+par CombinedNetwork.attacker6.ethg$o.channel delay 0.001s
+attr mutable ""
+attr unit s
+par CombinedNetwork.attacker6.ethg$o.channel datarate 1e+08bps
+attr mutable ""
+attr unit bps
+par CombinedNetwork.attacker6.ethg$o.channel ber 0
+attr mutable ""
+par CombinedNetwork.attacker6.ethg$o.channel per 0
+attr mutable ""
+par CombinedNetwork.coreRouter.ethg$o[5].channel typename "\"Link\""
+par CombinedNetwork.coreRouter.ethg$o[5].channel disabled false
+attr mutable ""
+par CombinedNetwork.coreRouter.ethg$o[5].channel delay 0.001s
+attr mutable ""
+attr unit s
+par CombinedNetwork.coreRouter.ethg$o[5].channel datarate 1e+08bps
+attr mutable ""
+attr unit bps
+par CombinedNetwork.coreRouter.ethg$o[5].channel ber 0
+attr mutable ""
+par CombinedNetwork.coreRouter.ethg$o[5].channel per 0
+attr mutable ""
+par CombinedNetwork.goodClient.ethg$o.channel typename "\"Link\""
+par CombinedNetwork.goodClient.ethg$o.channel disabled false
+attr mutable ""
+par CombinedNetwork.goodClient.ethg$o.channel delay 0.001s
+attr mutable ""
+attr unit s
+par CombinedNetwork.goodClient.ethg$o.channel datarate 1e+08bps
+attr mutable ""
+attr unit bps
+par CombinedNetwork.goodClient.ethg$o.channel ber 0
+attr mutable ""
+par CombinedNetwork.goodClient.ethg$o.channel per 0
+attr mutable ""
+par CombinedNetwork.coreRouter.ethg$o[6].channel typename "\"Link\""
+par CombinedNetwork.coreRouter.ethg$o[6].channel disabled false
+attr mutable ""
+par CombinedNetwork.coreRouter.ethg$o[6].channel delay 0.001s
+attr mutable ""
+attr unit s
+par CombinedNetwork.coreRouter.ethg$o[6].channel datarate 1e+08bps
+attr mutable ""
+attr unit bps
+par CombinedNetwork.coreRouter.ethg$o[6].channel ber 0
+attr mutable ""
+par CombinedNetwork.coreRouter.ethg$o[6].channel per 0
+attr mutable ""
+par CombinedNetwork.coreRouter.ethg$o[7].channel typename "\"Link\""
+par CombinedNetwork.coreRouter.ethg$o[7].channel disabled false
+attr mutable ""
+par CombinedNetwork.coreRouter.ethg$o[7].channel delay 0.001s
+attr mutable ""
+attr unit s
+par CombinedNetwork.coreRouter.ethg$o[7].channel datarate 1e+08bps
+attr mutable ""
+attr unit bps
+par CombinedNetwork.coreRouter.ethg$o[7].channel ber 0
+attr mutable ""
+par CombinedNetwork.coreRouter.ethg$o[7].channel per 0
+attr mutable ""
+par CombinedNetwork.server.ethg$o.channel typename "\"Link\""
+par CombinedNetwork.server.ethg$o.channel disabled false
+attr mutable ""
+par CombinedNetwork.server.ethg$o.channel delay 0.001s
+attr mutable ""
+attr unit s
+par CombinedNetwork.server.ethg$o.channel datarate 1e+08bps
+attr mutable ""
+attr unit bps
+par CombinedNetwork.server.ethg$o.channel ber 0
+attr mutable ""
+par CombinedNetwork.server.ethg$o.channel per 0
+attr mutable ""
+par CombinedNetwork.configurator typename "\"inet.networklayer.configurator.ipv4.Ipv4NetworkConfigurator\""
+par CombinedNetwork.configurator minLinkWeight 0.001
+par CombinedNetwork.configurator configureIsolatedNetworksSeparatly false
+par CombinedNetwork.configurator config "<config>...</config> at content:1"
+par CombinedNetwork.configurator assignAddresses true
+par CombinedNetwork.configurator assignUniqueAddresses true
+par CombinedNetwork.configurator assignDisjunctSubnetAddresses true
+par CombinedNetwork.configurator addStaticRoutes true
+par CombinedNetwork.configurator addDefaultRoutes true
+par CombinedNetwork.configurator addSubnetRoutes true
+par CombinedNetwork.configurator addDirectRoutes true
+par CombinedNetwork.configurator optimizeRoutes true
+par CombinedNetwork.configurator dumpTopology true
+par CombinedNetwork.configurator dumpLinks true
+par CombinedNetwork.configurator dumpAddresses true
+par CombinedNetwork.configurator dumpRoutes true
+par CombinedNetwork.configurator dumpConfig "\"\""
+par CombinedNetwork.server typename "\"ServerModule\""
+par CombinedNetwork.attacker1 typename "\"CustomBurstSender\""
+par CombinedNetwork.attacker1 startTime 31s
+attr unit s
+par CombinedNetwork.attacker1 burstDuration 59s
+attr unit s
+par CombinedNetwork.attacker1 sleepDuration 10000s
+attr unit s
+par CombinedNetwork.attacker1 sendInterval 0.0012734s
+attr unit s
+scalar CombinedNetwork.attacker1 sentPackets 46333
+par CombinedNetwork.attacker2 typename "\"CustomBurstSender\""
+par CombinedNetwork.attacker2 startTime 31s
+attr unit s
+par CombinedNetwork.attacker2 burstDuration 59s
+attr unit s
+par CombinedNetwork.attacker2 sleepDuration 10000s
+attr unit s
+par CombinedNetwork.attacker2 sendInterval 0.0014377s
+attr unit s
+scalar CombinedNetwork.attacker2 sentPackets 41038
+par CombinedNetwork.attacker3 typename "\"CustomBurstSender\""
+par CombinedNetwork.attacker3 startTime 31s
+attr unit s
+par CombinedNetwork.attacker3 burstDuration 59s
+attr unit s
+par CombinedNetwork.attacker3 sleepDuration 10000s
+attr unit s
+par CombinedNetwork.attacker3 sendInterval 0.00200949s
+attr unit s
+scalar CombinedNetwork.attacker3 sentPackets 29361
+par CombinedNetwork.attacker4 typename "\"CustomBurstSender\""
+par CombinedNetwork.attacker4 startTime 31s
+attr unit s
+par CombinedNetwork.attacker4 burstDuration 59s
+attr unit s
+par CombinedNetwork.attacker4 sleepDuration 10000s
+attr unit s
+par CombinedNetwork.attacker4 sendInterval 0.00297537s
+attr unit s
+scalar CombinedNetwork.attacker4 sentPackets 19830
+par CombinedNetwork.attacker5 typename "\"CustomBurstSender\""
+par CombinedNetwork.attacker5 startTime 31s
+attr unit s
+par CombinedNetwork.attacker5 burstDuration 59s
+attr unit s
+par CombinedNetwork.attacker5 sleepDuration 10000s
+attr unit s
+par CombinedNetwork.attacker5 sendInterval 0.00147716s
+attr unit s
+scalar CombinedNetwork.attacker5 sentPackets 39942
+par CombinedNetwork.attacker6 typename "\"CustomBurstSender\""
+par CombinedNetwork.attacker6 startTime 31s
+attr unit s
+par CombinedNetwork.attacker6 burstDuration 59s
+attr unit s
+par CombinedNetwork.attacker6 sleepDuration 10000s
+attr unit s
+par CombinedNetwork.attacker6 sendInterval 0.00312247s
+attr unit s
+scalar CombinedNetwork.attacker6 sentPackets 18896
+par CombinedNetwork.monitor typename "\"CSNMPMonitor\""
+par CombinedNetwork.monitor historySize 10
+par CombinedNetwork.monitor packetCount 0
+par CombinedNetwork.monitor alpha 0.2
+par CombinedNetwork.monitor threshold 1.5
+par CombinedNetwork.monitor initialRate 15000
+par CombinedNetwork.monitor samplePeriod 15s
+attr unit s
+par CombinedNetwork.monitor trainingPeriod 0s
+attr unit s
+par CombinedNetwork.monitor absoluteVolumeThreshold 0
+par CombinedNetwork.monitor floorFactor 1.05
+attr default 1.05
+par CombinedNetwork.collector typename "\"CFlowCollector\""
+par CombinedNetwork.collector maxFlows 10000
+par CombinedNetwork.collector collectionWindow 15s
+attr unit s
+par CombinedNetwork.analyzer typename "\"CFlowAnalyzer\""
+par CombinedNetwork.analyzer entropyThreshold 0.5
+par CombinedNetwork.analyzer portPacketThreshold 10000
+par CombinedNetwork.analyzer byteThreshold 2000
+par CombinedNetwork.analyzer topN 5
+par CombinedNetwork.analyzer goodClientPort -1
+par CombinedNetwork.coreRouter typename "\"CombinedNetwork.RouterModule\""
+par CombinedNetwork.goodClient typename "\"CustomBurstSender\""
+par CombinedNetwork.goodClient startTime 0s
+attr unit s
+par CombinedNetwork.goodClient burstDuration 600s
+attr unit s
+par CombinedNetwork.goodClient sleepDuration 0s
+attr unit s
+par CombinedNetwork.goodClient sendInterval 0.00105386s
+attr unit s
+scalar CombinedNetwork.goodClient sentPackets 85401
+par CombinedNetwork typename "\"CombinedNetwork\""
+

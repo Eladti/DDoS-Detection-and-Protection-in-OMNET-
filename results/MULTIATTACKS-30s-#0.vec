@@ -1,0 +1,196 @@
+version 3
+run MULTIATTACKS-30s-0-20250624-18:07:12-33956
+attr configname MULTIATTACKS-30s
+attr datetime 20250624-18:07:12
+attr datetimef 20250624-180712
+attr experiment MULTIATTACKS-30s
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsd ""
+attr iterationvarsf ""
+attr measurement ""
+attr network CombinedNetwork
+attr processid 33956
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+config image-path ../inet4.5/images
+config sim-time-limit 600s
+config *.monitor.samplePeriod 30s
+config *.monitor.trainingPeriod 0s
+config *.monitor.threshold 1.5
+config *.collector.collectionWindow 30s
+config *.attacker1.startTime 70s
+config *.attacker1.burstDuration 40s
+config *.attacker2.startTime 70s
+config *.attacker2.burstDuration 40s
+config *.attacker3.startTime 210s
+config *.attacker3.burstDuration 80s
+config *.attacker4.startTime 210s
+config *.attacker4.burstDuration 80s
+config *.attacker5.startTime 400s
+config *.attacker5.burstDuration 60s
+config *.attacker6.startTime 450s
+config *.attacker6.burstDuration 60s
+config network CombinedNetwork
+config sim-time-limit 600s
+config **.arp.typename GlobalArp
+config *.configurator.assignAddresses true
+config *.configurator.configureRoutingTable true
+config *.configurator.dumpAddresses true
+config *.configurator.dumpLinks true
+config *.configurator.dumpTopology true
+config *.configurator.dumpRoutes true
+config *.configurator.logLevel debug
+config *.server.numEthInterfaces 1
+config *.server.numApps 1
+config *.server.app[0].typename inet.applications.udpapp.UdpEchoApp
+config *.server.app[0].localPort 80
+config *.server.app[0].replyDelay 0s
+config *.server.app[0].recordScalar true
+config *.server.app[0].recordVector true
+config *.monitor.initialRate 15000
+config *.monitor.enabled true
+config *.monitor.recordVector true
+config *.monitor.recordScalar true
+config *.monitor.snmpTrigger.record vector
+config *.monitor.sampleRate.record vector
+config *.monitor.outToFlowCollector.record vector
+config *.monitor.trainingPeriod 900s
+config *.monitor.samplePeriod 1s
+config *.monitor.floorFactor 1.05
+config *.collector.enabled true
+config *.collector.maxFlows 10000
+config *.collector.recordVector true
+config *.collector.flowsExported.record vector
+config *.collector.collectionWindow 1s
+config *.analyzer.enabled true
+config *.analyzer.topN 5
+config *.analyzer.recordVector true
+config *.analyzer.attackFlow.record vector
+config *.attacker*.typename CustomBurstSender
+config *.attacker*.sleepDuration 10000s
+config *.attacker*.sendInterval exponential(0.0016s)
+config *.goodClient.typename CustomBurstSender
+config *.goodClient.startTime 0s
+config *.goodClient.burstDuration 600s
+config *.goodClient.sleepDuration 0s
+config *.goodClient.sendInterval "uniform(0.0004s, 0.0016s)"
+
+vector 0 CombinedNetwork.monitor snmpTrigger:vector ETV
+attr recordingmode vector
+attr source snmpTrigger
+attr title "SNMP trigger times"
+vector 1 CombinedNetwork.monitor sampleRate:vector ETV
+attr recordingmode vector
+attr source sampleRate
+attr title "Per-second packet samples"
+vector 2 CombinedNetwork.collector flowsExported:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source flowsExported
+attr title "FlowRecords emitted"
+vector 3 CombinedNetwork.collector port0_countVec:vector ETV
+attr recordingmode vector
+attr source port0_countVec
+attr title "Port0 Count per Window"
+vector 4 CombinedNetwork.collector port1_countVec:vector ETV
+attr recordingmode vector
+attr source port1_countVec
+attr title "Port1 Count per Window"
+vector 5 CombinedNetwork.collector port2_countVec:vector ETV
+attr recordingmode vector
+attr source port2_countVec
+attr title "Port2 Count per Window"
+vector 6 CombinedNetwork.collector port3_countVec:vector ETV
+attr recordingmode vector
+attr source port3_countVec
+attr title "Port3 Count per Window"
+vector 7 CombinedNetwork.collector port4_countVec:vector ETV
+attr recordingmode vector
+attr source port4_countVec
+attr title "Port4 Count per Window"
+vector 8 CombinedNetwork.collector port5_countVec:vector ETV
+attr recordingmode vector
+attr source port5_countVec
+attr title "Port5 Count per Window"
+vector 9 CombinedNetwork.collector port6_countVec:vector ETV
+attr recordingmode vector
+attr source port6_countVec
+attr title "Port6 Count per Window"
+vector 10 CombinedNetwork.analyzer attackFlow:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source attackFlow
+attr title "Identified Attack Flows"
+0	575087	90	90
+0	1559925	240	240
+0	2565024	420	420
+0	2951899	480	480
+1	142331	30	28466
+1	284667	60	28467
+1	575087	90	58084
+1	865517	120	58085
+1	1007851	150	28466
+1	1150188	180	28467
+1	1292528	210	28467
+1	1559925	240	53479
+1	1752291	270	28467
+1	1927977	300	28466
+1	2070315	330	28467
+1	2212653	360	28467
+1	2354991	390	28467
+1	2565024	420	42006
+1	2747981	450	28466
+1	2951899	480	38075
+1	3142277	510	38075
+1	3284617	540	28467
+1	3426951	570	28466
+1	3569288	600	28467
+2	865518	120	3
+2	1007852	150	1
+2	1150189	180	1
+2	1292529	210	1
+2	1559926	240	3
+2	1752292	270	1
+2	1927978	300	1
+2	2070316	330	1
+2	2212654	360	1
+2	2354992	390	1
+2	2565025	420	2
+2	2747982	450	1
+2	2951900	480	2
+2	3142278	510	2
+2	3284618	540	1
+2	3426952	570	1
+2	3569289	600	1
+3	865518	120	31412
+4	865518	120	27823
+5	1559926	240	14929
+6	1559926	240	10083
+7	2565025	420	13539
+8	2951900	480	9608
+8	3142278	510	9608
+9	865518	120	113867
+9	1007852	150	28466
+9	1150189	180	28467
+9	1292529	210	28467
+9	1559926	240	28467
+9	1752292	270	28467
+9	1927978	300	28466
+9	2070316	330	28467
+9	2212654	360	28467
+9	2354992	390	28467
+9	2565025	420	28467
+9	2747982	450	28466
+9	2951900	480	28467
+9	3142278	510	28467
+9	3284618	540	28467
+9	3426952	570	28466
+9	3569289	600	28467
+10	1559928	240	2
+10	1559928	240	3
+10	2565027	420	4
+
